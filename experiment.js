@@ -1,8 +1,6 @@
 // Create the timeline array that holds the experiment flow
 let timeline = []
 
-console.log(render_grid(1))
-
 // N-Back Stimuli, 9 in Total
 const stimuli = [
 	{
@@ -95,55 +93,15 @@ const end_card = {
 	choices: jsPsych.ALL_KEYS
 }
 
-// fixation between the n-back values
-const fixation = {
-	type: 'html-keyboard-response',
-	choices: jsPsych.NO_KEYS,
-	stimulus: empty_grid(),
-	trial_duration: 300,
-	data: {
-		test_part: 'fixation'
-	}
-}
 
-// n back display in the trial
-const n_back_event = {
-	type: 'html-keyboard-response',
-	stimulus: jsPsych.timelineVariable('stimulus'),
-	choices: ['s', 'n'],
-	trial_duration: 2000,
-	data: jsPsych.timelineVariable('data'),
-	on_finish: function(data) {
-		const this_value = data.numeric_value;
-		const last_trial = jsPsych.data.get().filter({
-			test_part: 'n-back'
-		}).last(2).values()[0];
-		// if the last trial is available
-		if(last_trial){
-			const last_value = last_trial.numeric_value;
-			const same = last_value == this_value;
-			// determine whether the user said it was the same
-			const user_reponse = data.key_press == 83 ? true : false;
-			// store if the answer was correct
-			data.correct = same == user_reponse;
-		}
-	}
-}
 
 // pipeline for a single stimulus
-let n_back_experiment = {
-	timeline: [n_back_event, fixation],
-	timeline_variables: stimuli,
-	sample: {
-		type: 'with-replacement',
-		size: 30
-	},
-};
+const n_back_exp = n_back_experiment(1, 10);
 
 // experinemt chain
 let experiment_chain = {
-	timeline: [n_back_experiment, end_card],
-	repetitions: 3
+	timeline: [n_back_exp, end_card],
+	repetitions: 1
 }
 timeline.push(experiment_chain)
 
