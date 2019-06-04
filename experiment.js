@@ -71,6 +71,23 @@ const stimuli = [
 ];
 
 
+const introduction = {
+	type: 'html-keyboard-response',
+	stimulus: "<h1>N-Back Experiment</h1> \
+		<p> You will see a <b>3x3</b> Grid and the cells will light \
+		up <span class=\"blue\"><b>blue</b></span> and you have to determine if that was \
+		same cell as <b>n</b> steps before. We will start with <b>n</b>=2 and \
+		raise the difficulty</p> \
+		<div style=\"margin: auto; display: inline-block\">" + empty_grid() +
+		"</div><p> Press <b>s</b> if the cell is the same as <b>n</b> steps before and \
+		<b>n</b> if it's not</p>",
+	choices: jsPsych.ALL_KEYS,
+	data: {
+		test_part: 'introduction'
+	}
+}
+timeline.push(introduction)
+
 // End card between trials
 const end_card = {
 	type: 'html-keyboard-response',
@@ -83,7 +100,7 @@ const fixation = {
 	type: 'html-keyboard-response',
 	choices: jsPsych.NO_KEYS,
 	stimulus: empty_grid(),
-	trial_duration: 500,
+	trial_duration: 300,
 	data: {
 		test_part: 'fixation'
 	}
@@ -119,7 +136,7 @@ let n_back_experiment = {
 	timeline_variables: stimuli,
 	sample: {
 		type: 'with-replacement',
-		size: 10
+		size: 30
 	},
 };
 

@@ -20,3 +20,7 @@ div#grid div{
 div#grid div#target{
 	background-color: #3498db;
 }
+
+span.blue{
+	color: #3498db;
+}
