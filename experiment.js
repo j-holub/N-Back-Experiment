@@ -2,21 +2,24 @@
 let timeline = []
 
 // introduction
-const intro = introduction()
-timeline.push(intro)
+const intro = introduction();
+timeline.push(intro);
 
-// N-Back 1-5 experiments
-// 25 in total
-for(let n = 1; n<=5;n++){
+
+// create a random list of 1-4 back trials
+const n_back_trial_sequence = jsPsych.randomization.repeat([1,2,3,4], 10);
+
+// create n-back trials according to the sequence
+n_back_trial_sequence.forEach(function(n){
 	timeline.push({
 		timeline: [
 			start_card(n),
 			n_back_experiment(n, 30),
 			end_card()
-		],
-		repetitions: 5
+		]
 	});
-}
+});
+
 
 // initialize the experiment
 jsPsych.init({
