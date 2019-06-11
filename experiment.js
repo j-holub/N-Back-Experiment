@@ -1,12 +1,17 @@
 // Create the timeline array that holds the experiment flow
 let timeline = []
 
+timeline.push({
+  type: 'fullscreen',
+  fullscreen_mode: true
+});
+
 // introduction
 const intro = introduction();
 timeline.push(intro);
 
 
-// create a random list of 1-4 back trials
+// create a random list of 1-4 back trials, 10 each
 const n_back_trial_sequence = jsPsych.randomization.repeat([1,2,3,4], 10);
 
 // create n-back trials according to the sequence
