@@ -30,6 +30,7 @@ n_back_trial_sequence.forEach(function(n){
 jsPsych.init({
 	timeline: timeline,
 	on_finish: function() {
-    	jsPsych.data.displayData();
+        // download the data
+        jsPsych.data.get().localSave('json', 'N-Back-' + Date.now() + '.json');
   	}
 });
