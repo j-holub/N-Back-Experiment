@@ -20,7 +20,7 @@ n_back_trial_sequence.forEach(function(n){
 		timeline: [
 			start_card(n),
 			n_back_experiment(n, 10),
-			end_card()
+			end_card(10,10000)
 		]
 	});
 });
