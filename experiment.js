@@ -12,14 +12,14 @@ timeline.push(intro);
 
 
 // create a random list of 1-4 back trials, 10 each
-const n_back_trial_sequence = jsPsych.randomization.repeat([1,2,3,4], 10);
+const n_back_trial_sequence = jsPsych.randomization.repeat([1,2,3,4], 4);
 
 // create n-back trials according to the sequence
 n_back_trial_sequence.forEach(function(n){
 	timeline.push({
 		timeline: [
 			start_card(n),
-			n_back_experiment(n, 30),
+			n_back_experiment(n, 10),
 			end_card()
 		]
 	});
