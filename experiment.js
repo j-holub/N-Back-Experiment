@@ -6,6 +6,7 @@ timeline.push({
   fullscreen_mode: true
 });
 
+
 // introduction
 const intro = introduction();
 timeline.push(intro);
@@ -29,6 +30,15 @@ n_back_trial_sequence.forEach(function(n){
 			end_card(stimuli, 10000)
 		]
 	});
+});
+
+
+// video lecture part
+timeline.push({
+    timeline: [
+        video_introduction(),
+        lecture_video('lecture-video.mp4')
+    ]
 });
 
 
