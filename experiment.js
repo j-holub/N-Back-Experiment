@@ -35,6 +35,7 @@ n_back_trial_sequence.forEach(function(n){
 // initialize the experiment
 jsPsych.init({
 	timeline: timeline,
+    show_progress_bar: true,
 	on_finish: function() {
         // download the data
         jsPsych.data.get().localSave('json', 'N-Back-' + Date.now() + '.json');
