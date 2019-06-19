@@ -24,3 +24,14 @@ div#grid div#target{
 span.blue{
 	color: #3498db;
 }
+
+p#Result{
+	font-size: 1.3em;
+	color: #292f33;
+}
+
+.progressLabel{
+	font-weight: bold;
+	color: #50565A !important;
+	font-size: 2em;
+}
