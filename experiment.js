@@ -11,9 +11,9 @@ const intro = introduction();
 timeline.push(intro);
 
 // how many trials per n step
-const trials_per_n = 4
+const trials_per_n = 5
 //  list of n steps
-const n_steps = [1,2,3,4]
+const n_steps = [1,2,3,4,5]
 // stimuli per trial
 const stimuli = 10
 
