@@ -12,7 +12,5 @@ wget https://raw.githubusercontent.com/kimmobrunfeldt/progressbar.js/master/dist
 mv progressbar.min.js lib/
 
 echo "Downloading Lecture Video..."
-youtube-dl -f 22 https://www.youtube.com/watch?v=ixRKeQMa7Nc
-rm CAMERA\ BASICS\!-ixRKeQMa7Nc.mkv CAMERA\ BASICS\!-ixRKeQMa7Nc.f251.webm
-rm CAMERA\ BASICS\!-ixRKeQMa7Nc.mkv
-mv CAMERA\ BASICS\!-ixRKeQMa7Nc.f137.mp4 "lecture-video.mp4"
+youtube-dl -k -f 22 https://www.youtube.com/watch?v=aDdkt8rRWGs
+mv "8.2.10 An Introduction to Linear Optimization - Video 6 - Sensitivity Analysis-aDdkt8rRWGs.mp4" lecture-video.mp4
