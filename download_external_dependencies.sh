@@ -9,7 +9,9 @@ rm jspsych-6.0.5.zip
 
 echo "Downloading ProgressBarJs..."
 wget https://raw.githubusercontent.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js
-mv progressbar.min.js lib/
+touch lib/progressbar.min.js
+head -1 progressbar.min.js > lib/progressbar.min.js
+rm progressbar.min.js
 
 echo "Downloading Lecture Video..."
 youtube-dl -k -f 22 https://www.youtube.com/watch?v=aDdkt8rRWGs
