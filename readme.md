@@ -38,4 +38,4 @@ The video we used was from the great [MIT OpenCourseWare YouTube Channel](https:
 * [JsPsych](https://www.jspsych.org) - JavaScript Framework for psychological experiments
 * [ProgressBarJs](https://progressbarjs.readthedocs.io/en/latest/) - JavaScript library to create a progress bar
 * [YouTube-dl](https://github.com/ytdl-org/youtube-dl/) - Python Script to download videos from YouTube
-* [MIT OpenCourseWare Lecture on Linear Optimization](https://www.youtube.com/watch?v=aDdkt8rRWGs)
+* [MIT OpenCourseWare Lecture on Linear Optimization](0be1d232e2310a7be74b9d3af7bbc39cc068f265)
